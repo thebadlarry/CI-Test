@@ -1,0 +1,7 @@
+# Opens a PR each week when a newer version of an action used above exists.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
