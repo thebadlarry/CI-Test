@@ -25,3 +25,11 @@ def median(xs: Sequence[float]) -> float:
 def rms(xs: Sequence[float]) -> float:
     """Root mean square."""
     return math.sqrt(mean([x * x for x in xs]))
+
+
+def stdev(xs: Sequence[float]) -> float:
+    """Sample standard deviation (divides by n - 1). Needs at least two values."""
+    if len(xs) < 2:
+        raise ValueError("stdev() needs at least two values")
+    m = mean(xs)
+    return math.sqrt(sum((x - m) ** 2 for x in xs) / (len(xs) - 1))
